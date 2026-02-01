@@ -2,6 +2,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes, CallbackQueryHandler
 from PIL import Image, ImageDraw, ImageFont
 import os
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 import arabic_reshaper
 from bidi.algorithm import get_display
 
@@ -146,3 +147,4 @@ app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_message))
 
 print("🔥 Verse Template Bot Running...")
 app.run_polling()
+
